@@ -14,7 +14,6 @@ export default class Server {
         this.dbConnect();
         this.pathCelda = '/api/celdas'; // Definir el path para las rutas de celdas
         this.routes();
-
     }
 
     middlewares() {
@@ -22,20 +21,12 @@ export default class Server {
         this.app.use(express.json());
         // Middleware para manejar datos URL-encoded
         this.app.use(express.urlencoded({ extended: true }));
-        // Puedes agregar más middlewares aquí si es necesario
+
     }
 
     listen() {
         // Levantar el servidor en el puerto definido
         this.app.listen(process.env.PORT, () => {
-            console.log(`Server is running on port ${process.env.PORT}`);
-        });
-    }
-
-    }
-    listen() {
-        // Levantar el servidor en el puerto definido
-        this.app.listen(process.env.PORT,() => {
             console.log(`Server is running on port ${process.env.PORT}`);
         });
     }
